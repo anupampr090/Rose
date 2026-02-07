@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Meenakshi ❤️</title>
+  <title>For Meenakshi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body{
       margin:0;
-      height:100vh;
+      min-height:100vh;
       display:flex;
-      justify-content:center;
-      align-items:center;
-      background: radial-gradient(circle at top, #ffb3c7, #14000a);
-      font-family: Arial, sans-serif;
-      overflow:hidden;
+      background: radial-gradient(circle at center, #3a0d18, #050002);
+      font-family: 'Nunito', sans-serif;
+      overflow-x:hidden;
       color:white;
     }
 
     .wrap{
+      margin: auto;
       text-align:center;
       z-index:5;
       padding: 20px;
@@ -26,8 +27,10 @@
 
     h1{
       margin:0;
-      font-size:2.2rem;
+      font-size:3.5rem;
+      font-family: 'Dancing Script', cursive;
       text-shadow:0 0 12px rgba(255,255,255,0.3);
+      color: #ff4d6d;
     }
 
     p{
@@ -140,29 +143,44 @@
       padding:12px 20px;
       border:none;
       border-radius:30px;
-      background:#ff2d55;
+      background: linear-gradient(45deg, #ff2d55, #ff5a7a);
       color:white;
-      font-size:1rem;
+      font-size:1.1rem;
+      font-weight: bold;
       cursor:pointer;
-      box-shadow:0 0 15px rgba(255,45,85,0.5);
+      box-shadow:0 5px 15px rgba(255,45,85,0.4);
       transition:0.2s;
+      animation: pulseBtn 2s infinite;
     }
 
     button:hover{ transform: scale(1.05); }
+
+    @keyframes pulseBtn {
+      0% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(255, 45, 85, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0); }
+    }
 
     /* Surprise message */
     .msg{
       margin-top:22px;
       display:none;
       animation: pop 0.6s ease;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .bigText{
-      font-size:2.1rem;
+      font-size:2.5rem;
+      font-family: 'Dancing Script', cursive;
       font-weight:800;
       letter-spacing:1px;
       text-shadow:0 0 18px rgba(255,255,255,0.25);
       margin-bottom:10px;
+      color: #ffccd5;
     }
 
     .smallText{
@@ -177,7 +195,7 @@
 
     /* Falling hearts */
     .heart{
-      position:absolute;
+      position:fixed;
       top:-20px;
       font-size:18px;
       animation: fall linear infinite;
@@ -191,13 +209,27 @@
         opacity:0;
       }
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+      .roseBox {
+        animation: floatMobile 3s ease-in-out infinite;
+        margin: 20px auto;
+      }
+      @keyframes floatMobile {
+        0%,100%{ transform: scale(0.75) translateY(0); }
+        50%{ transform: scale(0.75) translateY(-15px); }
+      }
+      h1 { font-size: 2.8rem; }
+      .bigText { font-size: 2rem; }
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <h1>🌹❤️</h1>
-    <p>For my favourite one, <b>Meenakshi Jayan</b> ❤️🌹</p>
+    <p>For my favourite one, <b>Meenakshi Jayan</b> ❤️</p>
 
     <div class="roseBox">
       <div class="head">
@@ -218,7 +250,7 @@
       <div class="leaf right"></div>
     </div>
 
-    <button onclick="showMessage()">Tap for a Surprise 💌</button>
+    <button id="surpriseBtn">Tap for a Surprise 💌</button>
 
     <div class="msg" id="msg">
       <div class="bigText">HAPPY ROSE DAY 🌹</div>
@@ -227,21 +259,23 @@
   </div>
 
   <script>
-    function showMessage(){
-      document.getElementById("msg").style.display = "block";
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("surpriseBtn").addEventListener('click', () => {
+        document.getElementById("msg").style.display = "block";
+      });
 
-    const hearts = ["❤️","💖","💕","💘","🌹"];
-    setInterval(()=>{
-      const h = document.createElement("div");
-      h.className="heart";
-      h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
-      h.style.left = Math.random()*100 + "vw";
-      h.style.animationDuration = (2 + Math.random()*4) + "s";
-      h.style.fontSize = (16 + Math.random()*22) + "px";
-      document.body.appendChild(h);
-      setTimeout(()=>h.remove(), 7000);
-    }, 280);
+      const hearts = ["❤️","💖","💕","💘","🌹"];
+      setInterval(() => {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.animationDuration = (2 + Math.random() * 4) + "s";
+        h.style.fontSize = (16 + Math.random() * 22) + "px";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 7000);
+      }, 280);
+    });
   </script>
 </body>
 </html>
