@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Meenakshi ❤️</title>
+
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: radial-gradient(circle at top, #ffb3c7, #14000a);
+      font-family: Arial, sans-serif;
+      overflow:hidden;
+      color:white;
+    }
+
+    .wrap{
+      text-align:center;
+      z-index:5;
+      padding: 20px;
+    }
+
+    h1{
+      margin:0;
+      font-size:2.2rem;
+      text-shadow:0 0 12px rgba(255,255,255,0.3);
+    }
+
+    p{
+      margin-top:10px;
+      font-size:1.1rem;
+      opacity:0.95;
+    }
+
+    /* ROSE */
+    .roseBox{
+      margin:35px auto;
+      width:260px;
+      height:420px;
+      position:relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-12px); }
+    }
+
+    /* Flower head */
+    .head{
+      position:absolute;
+      top:30px;
+      left:50%;
+      transform:translateX(-50%);
+      width:180px;
+      height:180px;
+    }
+
+    .petal{
+      position:absolute;
+      width:120px;
+      height:120px;
+      background: radial-gradient(circle at top left, #ff5a7a, #b3002d);
+      border-radius: 70% 30% 70% 30%;
+      box-shadow: 0 0 18px rgba(255,0,80,0.35);
+      transform-origin:center;
+    }
+
+    .petal.p1{ top:30px; left:30px; transform: rotate(20deg); }
+    .petal.p2{ top:15px; left:45px; transform: rotate(70deg); }
+    .petal.p3{ top:40px; left:20px; transform: rotate(-35deg); }
+    .petal.p4{ top:45px; left:55px; transform: rotate(140deg); }
+
+    /* Inner petals */
+    .petal.inner{
+      width:80px;
+      height:80px;
+      top:55px;
+      left:55px;
+      background: radial-gradient(circle at top left, #ff2d55, #800020);
+      border-radius: 60% 40% 60% 40%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    }
+
+    .petal.i1{ transform: rotate(25deg); }
+    .petal.i2{ transform: rotate(95deg); }
+    .petal.i3{ transform: rotate(-35deg); }
+
+    .center{
+      position:absolute;
+      width:35px;
+      height:35px;
+      border-radius:50%;
+      background:#5a0018;
+      top:72px;
+      left:72px;
+      box-shadow:0 0 12px rgba(0,0,0,0.4);
+    }
+
+    /* Stem */
+    .stem{
+      position:absolute;
+      width:14px;
+      height:240px;
+      background: linear-gradient(#2ecc71, #0b5d2c);
+      top:180px;
+      left:50%;
+      transform:translateX(-50%);
+      border-radius:20px;
+      box-shadow:0 0 15px rgba(0,255,100,0.12);
+    }
+
+    /* Leaves */
+    .leaf{
+      position:absolute;
+      width:90px;
+      height:55px;
+      background: radial-gradient(circle at top left, #45ff9a, #0b5d2c);
+      border-radius: 100% 0 100% 0;
+      top:270px;
+      box-shadow:0 0 12px rgba(0,255,120,0.12);
+    }
+
+    .leaf.left{
+      left:45px;
+      transform: rotate(-25deg);
+    }
+
+    .leaf.right{
+      right:45px;
+      transform: rotate(205deg);
+    }
+
+    /* Surprise button */
+    button{
+      padding:12px 20px;
+      border:none;
+      border-radius:30px;
+      background:#ff2d55;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      box-shadow:0 0 15px rgba(255,45,85,0.5);
+      transition:0.2s;
+    }
+
+    button:hover{ transform: scale(1.05); }
+
+    /* Surprise message */
+    .msg{
+      margin-top:22px;
+      display:none;
+      animation: pop 0.6s ease;
+    }
+
+    .bigText{
+      font-size:2.1rem;
+      font-weight:800;
+      letter-spacing:1px;
+      text-shadow:0 0 18px rgba(255,255,255,0.25);
+      margin-bottom:10px;
+    }
+
+    .smallText{
+      font-size:1.25rem;
+      opacity:0.95;
+    }
+
+    @keyframes pop{
+      0%{ transform: scale(0.5); opacity:0; }
+      100%{ transform: scale(1); opacity:1; }
+    }
+
+    /* Falling hearts */
+    .heart{
+      position:absolute;
+      top:-20px;
+      font-size:18px;
+      animation: fall linear infinite;
+      opacity:0.85;
+      z-index:1;
+    }
+
+    @keyframes fall{
+      to{
+        transform: translateY(110vh);
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>🌹❤️</h1>
+    <p>For my favourite one, <b>Meenakshi Jayan</b> ❤️🌹</p>
+
+    <div class="roseBox">
+      <div class="head">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+
+        <div class="petal inner i1"></div>
+        <div class="petal inner i2"></div>
+        <div class="petal inner i3"></div>
+
+        <div class="center"></div>
+      </div>
+
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+
+    <button onclick="showMessage()">Tap for a Surprise 💌</button>
+
+    <div class="msg" id="msg">
+      <div class="bigText">HAPPY ROSE DAY 🌹</div>
+      <div class="smallText">In a world full of people… I’d still choose you ❤️</div>
+    </div>
+  </div>
+
+  <script>
+    function showMessage(){
+      document.getElementById("msg").style.display = "block";
+    }
+
+    const hearts = ["❤️","💖","💕","💘","🌹"];
+    setInterval(()=>{
+      const h = document.createElement("div");
+      h.className="heart";
+      h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+      h.style.left = Math.random()*100 + "vw";
+      h.style.animationDuration = (2 + Math.random()*4) + "s";
+      h.style.fontSize = (16 + Math.random()*22) + "px";
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(), 7000);
+    }, 280);
+  </script>
+</body>
+</html>
