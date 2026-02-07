@@ -193,21 +193,13 @@
       100%{ transform: scale(1); opacity:1; }
     }
 
-    /* Falling hearts */
-    .heart{
-      position:fixed;
-      top:-20px;
-      font-size:18px;
-      animation: fall linear infinite;
-      opacity:0.85;
-      z-index:1;
+    /* Rose Bloom Animation */
+    .roseBox.bloom .head {
+      animation: bloomEffect 2s ease-in-out infinite alternate;
     }
-
-    @keyframes fall{
-      to{
-        transform: translateY(110vh);
-        opacity:0;
-      }
+    @keyframes bloomEffect {
+      0% { transform: translateX(-50%) scale(1); }
+      100% { transform: translateX(-50%) scale(1.15); }
     }
 
     /* Mobile Responsiveness */
@@ -262,19 +254,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("surpriseBtn").addEventListener('click', () => {
         document.getElementById("msg").style.display = "block";
+        document.querySelector(".roseBox").classList.add("bloom");
       });
-
-      const hearts = ["❤️","💖","💕","💘","🌹"];
-      setInterval(() => {
-        const h = document.createElement("div");
-        h.className = "heart";
-        h.innerText = hearts[Math.floor(Math.random() * hearts.length)];
-        h.style.left = Math.random() * 100 + "vw";
-        h.style.animationDuration = (2 + Math.random() * 4) + "s";
-        h.style.fontSize = (16 + Math.random() * 22) + "px";
-        document.body.appendChild(h);
-        setTimeout(() => h.remove(), 7000);
-      }, 280);
     });
   </script>
 </body>
